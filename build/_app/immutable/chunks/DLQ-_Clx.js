@@ -1,0 +1,1 @@
+import{w as s}from"./B8Eevg5d.js";const t=s(null),l=s(!1),a=s(null),n=s(null),o=s({questions:[],answers:{},startTime:null,endTime:null,timeLimit:60*60*1e3}),u=s(null);export{u as a,a as b,o as e,l as i,n as s,t as u};

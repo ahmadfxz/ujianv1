@@ -1,4 +1,4 @@
-# Try Out & Lomba Online - Website dengan Svelte
+# Try Out & Lomba Online - Website dengan SvelteKit
 
 Website lengkap untuk Try Out dan Lomba Online dengan fitur lengkap sesuai alur pengguna.
 
@@ -11,12 +11,12 @@ Website lengkap untuk Try Out dan Lomba Online dengan fitur lengkap sesuai alur 
 3. **Dashboard Peserta** - Validasi data peserta sebelum ujian
 4. **Petunjuk Ujian** - Informasi dan aturan ujian
 5. **Pilih Kelas** - Pilihan kelas (4, 5, 6)
-6. **Pilih Mata Pelajaran** - Pilihan mata pelajaran
+6. **Pilih Mata Pelajaran** - Pilihan mata pelajaran (Matematika, Bahasa Indonesia, IPA, IPS)
 7. **Halaman Soal** - Soal ujian dengan timer dan navigasi
 8. **Konfirmasi Selesai** - Konfirmasi sebelum submit
 9. **Hasil/Nilai** - Tampilan hasil ujian
-10. **Sertifikat** - Unduh sertifikat digital
-11. **Logout** - Kembali ke beranda
+10. **Sertifikat** - Unduh Bukti Perolehan Nilai
+11. **Pembetulan Data** - Form untuk pembetulan data peserta
 
 ## 🚀 Instalasi
 
@@ -49,32 +49,33 @@ Untuk testing, gunakan akun berikut:
 
 ## 🛠 Teknologi
 
+- **SvelteKit** - Full-stack framework untuk Svelte
 - **Svelte** - Framework JavaScript modern
 - **Vite** - Build tool dan development server
-- **svelte-spa-router** - Routing untuk SPA
 - **Svelte Stores** - State management
 
 ## 📁 Struktur Proyek
 
 ```
 src/
-├── routes/          # Halaman-halaman aplikasi
-│   ├── Home.svelte
-│   ├── Login.svelte
-│   ├── Dashboard.svelte
-│   ├── Petunjuk.svelte
-│   ├── PilihKelas.svelte
-│   ├── PilihMapel.svelte
-│   ├── Soal.svelte
-│   ├── KonfirmasiSelesai.svelte
-│   ├── Hasil.svelte
-│   └── Sertifikat.svelte
+├── routes/          # Halaman-halaman aplikasi (file-based routing)
+│   ├── +layout.svelte
+│   ├── +page.svelte          # Home (/)
+│   ├── login/+page.svelte    # /login
+│   ├── dashboard/+page.svelte # /dashboard
+│   ├── petunjuk/+page.svelte
+│   ├── pilih-kelas/+page.svelte
+│   ├── pilih-mapel/+page.svelte
+│   ├── soal/+page.svelte
+│   ├── konfirmasi-selesai/+page.svelte
+│   ├── hasil/+page.svelte
+│   ├── sertifikat/+page.svelte
+│   └── pembetulan-data/+page.svelte
 ├── lib/
-│   └── data.js      # Data dummy untuk demo
-├── stores.js        # State management
-├── App.svelte       # Komponen utama dengan router
-├── main.js          # Entry point
-└── app.css          # Global styles
+│   ├── stores.js    # State management
+│   └── data.js      # Data dummy dan soal
+├── app.css          # Global styles
+└── app.html         # HTML template
 ```
 
 ## ✨ Fitur Keunggulan
@@ -82,28 +83,31 @@ src/
 ✅ **Aman** - Validasi identitas peserta  
 ✅ **Ramah Siswa** - UI yang mudah digunakan  
 ✅ **Fleksibel** - Multi kelas & mata pelajaran  
-✅ **Modern** - Desain kontemporer dengan animasi  
+✅ **Modern** - Desain kontemporer dengan gradient hijau tipis  
 ✅ **Responsif** - Berfungsi di berbagai perangkat  
 ✅ **Timer Real-time** - Pantau waktu pengerjaan  
 ✅ **Navigasi Intuitif** - Mudah berpindah antar soal  
-✅ **Sertifikat Digital** - Dapat diunduh/cetak  
+✅ **Soal Terpisah** - Setiap mata pelajaran memiliki soal sendiri  
+✅ **Bukti Perolehan Nilai** - Dapat diunduh/cetak  
 
 ## 🎨 Desain
 
-- Gradient modern dengan warna purple/blue
+- Gradient hijau tipis (putih ke hijau muda)
 - Card-based layout
 - Smooth animations dan transitions
 - Responsive design untuk mobile dan desktop
+- Kontras text yang jelas
 
-## 📝 Catatan
+## 📝 Informasi
 
+- **Penyelenggara:** Lembaga Literasi Sembilan Mutiara
+- **Framework:** SvelteKit (file-based routing)
 - Data saat ini menggunakan data dummy untuk demo
 - Untuk production, perlu integrasi dengan backend API
-- Sertifikat dapat dicetak menggunakan fungsi print browser
 
 ## 🔄 Alur Singkat
 
-**Beranda → Login → Dashboard → Petunjuk → Pilih Kelas → Pilih Mapel → Soal → Konfirmasi → Hasil → Sertifikat**
+**Beranda → Login → Dashboard → Petunjuk → Pilih Kelas → Pilih Mapel → Soal → Konfirmasi → Hasil → Bukti Perolehan Nilai**
 
 ---
 
